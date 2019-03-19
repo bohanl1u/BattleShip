@@ -51,6 +51,5 @@ void BattleShip::Model::addPlayer(View& view) {
   player->placeShips();
   players.push_back(std::move(player));
 }
-
 }
 #endif //BATTLESHIP_MODEL_H
