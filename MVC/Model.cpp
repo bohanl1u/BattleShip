@@ -6,8 +6,8 @@
 #include <algorithm>
 #include "Model.h"
 
-BattleShip::Model::Model() {
-
+BattleShip::Model::Model(): gameAttributes(BattleShip::GameAttributes()),
+    players(std::vector<std::unique_ptr<Player>>()), playerTurn(0), forcedGameOver(false) {
 }
 
 BattleShip::Player &BattleShip::Model::getAttackingPlayer() {
@@ -31,7 +31,7 @@ bool BattleShip::Model::isGameOver() const {
 }
 
 void BattleShip::Model::changeTurn() {
-
+    playerTurn = 1 + playerTurn %
 }
 
 void BattleShip::Model::loadGameConfigurationFromFile(const std::string &gameConfigurationFile) {

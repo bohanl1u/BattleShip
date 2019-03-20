@@ -37,3 +37,27 @@ bool BattleShip::Player::operator==(const BattleShip::Player &rhs) const {
 bool BattleShip::Player::operator!=(const BattleShip::Player &rhs) const {
     return false;
 }
+
+bool BattleShip::Player::allShipsSunk() const {
+    return false;
+}
+
+BattleShip::AttackResult BattleShip::Player::fireAt(int row, int col) {
+    return BattleShip::AttackResult(false, false, 0);
+}
+
+BattleShip::Player &BattleShip::Player::getOpponent() {
+    return <#initializer#>;
+}
+
+const BattleShip::Player &BattleShip::Player::getOpponent() const {
+    return <#initializer#>;
+}
+
+void BattleShip::Player::setOpponent(BattleShip::Player &opponent) {
+
+}
+
+bool BattleShip::Player::hit(char shipChar) {
+    return false;
+}

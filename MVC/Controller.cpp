@@ -13,7 +13,8 @@
 #include "CheatingAI.h"
 #include "RandomAI.h"
 #include "HuntDestroyAI.h"
-BattleShip::Controller::Controller(): view(std::make_unique<StandardView>(std::cin, std::cout)) {
+BattleShip::Controller::Controller(): hasBeenSetUp(false), model(BattleShip::Model()), view(std::make_unique<StandardView>(std::cin, std::cout)) {
+
 
 }
 
@@ -26,6 +27,8 @@ void BattleShip::Controller::setupGame(const std::string &GameConfigurationFile,
 // ( you can see in the add player function, it calls placeShips for each player..
 // so this is part of the setup, and set the opponents for all the players
 
+
+    model.loadGameConfigurationFromFile(GameConfigurationFile);
     AiPlayer::seed_random_number_generator(seed);
 }
 

@@ -5,7 +5,6 @@
 #include "Utility.h"
 #include "GameAttributes.h"
 
-
 BattleShip::GameAttributes::GameAttributes() {
 
 }
@@ -36,11 +35,11 @@ void BattleShip::GameAttributes::setNumCols(int numCols) {
 }
 
 int BattleShip::GameAttributes::getShipSize(const char ShipChar) const {
-
+    return shipAttributes.at(ShipChar);
 }
 
 const std::map<char, int> &BattleShip::GameAttributes::getShipAttributes() const {
-    return <#initializer#>;
+    return this->shipAttributes;
 }
 
 std::istream& BattleShip::GameAttributes::operator>>(std::istream& in, BattleShip::GameAttributes& gameAttributes){
