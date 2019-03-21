@@ -17,27 +17,26 @@ BattleShip::StandardView::StandardView(std::istream& in, std::ostream& out): in(
 
 BattleShip::PlayerConfiguration BattleShip::StandardView::getPlayerConfiguration(){
     int numPlayas;
-
     out<<"What type of game do you want to play?\n"
          "1. Human vs Human\n"
          "2. Human vs AI\n"
          "3. AI vs AI\n"
-         "Your choice: "<<endl;
+         "Your choice: "<<std::endl;
 
 
     in>>numPlayas;
 
     if(numPlayas== 1){
-        BattleShip::PlayerConfiguration playerConfiguration(2,0);
+        return BattleShip::PlayerConfiguration(2,0);
     }else
     if(numPlayas== 2){
-        BattleShip::PlayerConfiguration playerConfiguration(1,1);
+        return BattleShip::PlayerConfiguration(1,1);
     }else
     if(numPlayas== 3){
-        BattleShip::PlayerConfiguration playerConfiguration(0,2);
+        return BattleShip::PlayerConfiguration(0,2);
+    }else{
+        return BattleShip::PlayerConfiguration(0,0);
     }
-
-    return playerConfiguration;
 }
 
 int BattleShip::StandardView::getAiChoice(){
@@ -47,7 +46,7 @@ int BattleShip::StandardView::getAiChoice(){
          "1. Cheating AI\n"
          "2. Random AI\n"
          "3. Hunt Destroy AI\n"
-         "Your choice:"<<endl;
+         "Your choice:"<<std::endl;
 
     in>>numAI;
 
@@ -57,7 +56,7 @@ int BattleShip::StandardView::getAiChoice(){
 
 
 std::string BattleShip::StandardView::getPlayerName(int i) {
-    std::cout<<"Player 1 please enter your name:"<<endl;
+    std::cout<<"Player 1 please enter your name:"<<std::endl;
     std::string name;
     verifiedRead(in, name);
     return name;
@@ -67,7 +66,7 @@ std::string BattleShip::StandardView::getPlayerName(int i) {
 void BattleShip::StandardView::printBoardAsObscured(const Board &board) {
     std::vector<std::string> hidBoard = board.getHiddenVersion();
     for(int i = 0; i < board.getNumRows();i++){
-        std::cout<<hidBoard[i]<<endl;
+        std::cout<<hidBoard[i]<<std::endl;
     }
 
 }
@@ -75,7 +74,7 @@ void BattleShip::StandardView::printBoardAsObscured(const Board &board) {
 void BattleShip::StandardView::printBoardAsVisible(const Board &board) {
     std::vector<std::string>  visBoard = board.getVisibleVersion();
     for(int i = 0; i < board.getNumRows();i++){
-        std::cout<<visBoard[i]<<endl;
+        std::cout<<visBoard[i]<<std::endl;
     }
 
 }
@@ -111,7 +110,7 @@ ShipPlacement BattleShip::StandardView::getShipPlacement(const Player &player, c
 
     out<<player.getName()<< ",  do you want to place "<<shipChar<<" horizontally or vertically?\n"
                                                                   "Enter h for horizontal or v for vertical\n"
-                                                                  "Your choice: "<<endl;
+                                                                  "Your choice: "<<std::endl;
 
     verifiedRead(in, input);
 
@@ -139,9 +138,7 @@ ShipPlacement BattleShip::StandardView::getShipPlacement(const Player &player, c
 
     }
 
-    BattleShip::ShipPlacement place(row, col, endRow, endCol);
-
-    place.normalize();
+    ShipPlacement place(row, col, endRow, endCol);
 
     return  place;
 
