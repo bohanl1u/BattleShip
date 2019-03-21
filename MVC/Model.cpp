@@ -31,11 +31,12 @@ bool BattleShip::Model::isGameOver() const {
 }
 
 void BattleShip::Model::changeTurn() {
-    playerTurn = 1 + playerTurn %
+    playerTurn = (1 + playerTurn) % 2;
 }
 
 void BattleShip::Model::loadGameConfigurationFromFile(const std::string &gameConfigurationFile) {
-
+    std::ifstream f(gameConfigurationFile);
+    f>>gameAttributes;
 }
 
 void BattleShip::Model::endGame() {

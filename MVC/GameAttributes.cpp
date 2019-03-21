@@ -15,7 +15,21 @@ BattleShip::GameAttributes::GameAttributes(int numRows, int numCols) {
 }
 
 BattleShip::GameAttributes::GameAttributes(std::istream &in) {
+    if(in){
+        verifiedRead(in, numRows);
+        verifiedRead(in, numCols);
 
+        int numShips;
+        verifiedRead(in, numShips);
+
+        char shipChar;
+        int shipSize;
+        for (int i=0; i<numShips; i++){
+            verifiedRead(in, shipChar);
+            verifiedRead(in, shipSize);
+            shipAttributes.insert(std::make_pair(shipChar, shipSize));
+        }
+    }
 }
 
 int BattleShip::GameAttributes::getNumRows() const {
@@ -42,6 +56,7 @@ const std::map<char, int> &BattleShip::GameAttributes::getShipAttributes() const
     return this->shipAttributes;
 }
 
-std::istream& BattleShip::GameAttributes::operator>>(std::istream& in, BattleShip::GameAttributes& gameAttributes){
-
+std::istream& BattleShip::operator>>(std::istream& in, BattleShip::GameAttributes& gameAttributes){
+    gameAttributes = GameAttributes(in);
+    return in;
 }

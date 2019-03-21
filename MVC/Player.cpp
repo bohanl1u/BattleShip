@@ -11,23 +11,23 @@ BattleShip::Player::Player(const BattleShip::GameAttributes &gameAttributes, Bat
 }
 
 const std::string &BattleShip::Player::getName() const {
-    return <#initializer#>;
+    return this->name;
 }
 
 void BattleShip::Player::setName(const std::string &name) {
-
+    this->name = name;
 }
 
 const BattleShip::Board &BattleShip::Player::getBoard() const {
-    return <#initializer#>;
+    return this->board;
 }
 
 BattleShip::Board &BattleShip::Player::getBoard() {
-    return <#initializer#>;
+    return this->board;
 }
 
 const int BattleShip::Player::getId() const {
-    return 0;
+    return this->id;
 }
 
 bool BattleShip::Player::operator==(const BattleShip::Player &rhs) const {
