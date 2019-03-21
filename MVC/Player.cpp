@@ -6,8 +6,9 @@
 
 int BattleShip::Player::num_instances = 0;
 
-BattleShip::Player::Player(const BattleShip::GameAttributes &gameAttributes, BattleShip::View &view) {
-
+BattleShip::Player::Player(const BattleShip::GameAttributes &gameAttributes, BattleShip::View &view): id(BattleShip::Player::num_instances),
+        view(view), board(BattleShip::Board(gameAttributes.getNumRows(), gameAttributes.getNumCols())) {
+    BattleShip::Player::num_instances++;
 }
 
 const std::string &BattleShip::Player::getName() const {
@@ -39,25 +40,42 @@ bool BattleShip::Player::operator!=(const BattleShip::Player &rhs) const {
 }
 
 bool BattleShip::Player::allShipsSunk() const {
-    return false;
+    return shipHealths.empty();
 }
 
 BattleShip::AttackResult BattleShip::Player::fireAt(int row, int col) {
-    return BattleShip::AttackResult(false, false, 0);
+    char charAt = getOpponent().getBoard().at(row, col).getContents();
+    bool destroyed;
+    bool hit = this->hit(charAt);
+    if (hit){
+        shipHealths.at(charAt)--;
+    }
+    if(shipHealths.at(charAt)==0){
+        destroyed = true;
+        shipHealths.erase(charAt);
+    }else{
+        destroyed = false;
+    }
+    return BattleShip::AttackResult(hit, destroyed, charAt);
 }
 
 BattleShip::Player &BattleShip::Player::getOpponent() {
-    return <#initializer#>;
+    return *opponent;
 }
 
 const BattleShip::Player &BattleShip::Player::getOpponent() const {
-    return <#initializer#>;
+    return *opponent;
 }
 
 void BattleShip::Player::setOpponent(BattleShip::Player &opponent) {
-
+    this->opponent = &opponent;
 }
 
 bool BattleShip::Player::hit(char shipChar) {
-    return false;
+    if (shipChar == '*'){
+        return false;
+    }
+    else{
+        return true;
+    }
 }

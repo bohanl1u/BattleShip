@@ -46,7 +46,6 @@ void BattleShip::Controller::setupGame(const std::string &GameConfigurationFile,
         }
     }
     hasBeenSetUp = true;
-
 }
 
 void BattleShip::Controller::setupGame(const std::string &GameConfigurationFile) {
@@ -59,5 +58,7 @@ void BattleShip::Controller::setupGame() {
 void BattleShip::Controller::playGame() {
 //in PlayGame: you can get the move from the current player,
 // enact the move then change the turn until the game is over!
-
+    while (!model.isGameOver()){
+        model.getNextMove();
+    }
 }
