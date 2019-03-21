@@ -68,7 +68,7 @@ void BattleShip::Cell::setHasBeenFiredAt(bool hasBeenFiredAt){
 }
 
 bool BattleShip::Cell::containsShip() const {
-    if ((BattleShip::Cell::contents != BattleShip::Cell::hiddenMarker) && (BattleShip::Cell::contents != missMarker)) {
+    if ((BattleShip::Cell::contents != BattleShip::Cell::hiddenMarker)) {
         return true;
     }
     else {

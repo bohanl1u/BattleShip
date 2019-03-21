@@ -59,6 +59,7 @@ void BattleShip::Controller::playGame() {
 //in PlayGame: you can get the move from the current player,
 // enact the move then change the turn until the game is over!
     while (!model.isGameOver()){
-        model.getNextMove();
+        model.getNextMove()->enact(model, *view);
+        model.changeTurn();
     }
 }

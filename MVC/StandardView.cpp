@@ -8,7 +8,7 @@
 #include "StandardView.h"
 #include "Utility.h"
 
-BattleShip::StandardView::StandardView(){
+BattleShip::StandardView::StandardView(): in(std::cin), out(std::cout){
 }
 
 
@@ -65,28 +65,26 @@ std::string BattleShip::StandardView::getPlayerName(int i) {
 
 void BattleShip::StandardView::printBoardAsObscured(const Board &board) {
     std::vector<std::string> hidBoard = board.getHiddenVersion();
-    for(int i = 0; i < board.getNumRows();i++){
-        std::cout<<hidBoard[i]<<std::endl;
-    }
+    printBoard(hidBoard);
 
 }
 
 void BattleShip::StandardView::printBoardAsVisible(const Board &board) {
     std::vector<std::string>  visBoard = board.getVisibleVersion();
-    for(int i = 0; i < board.getNumRows();i++){
-        std::cout<<visBoard[i]<<std::endl;
-    }
+    printBoard(visBoard);
 
 }
 
 void BattleShip::StandardView::printBoard(const std::vector<std::string> &board) {
-    printBoardAsObscured(board);
-    printBoardAsVisible(board);
+    for (int i = 0; i < board.size(); i++){
+        out<<board[i];
+        out<<"\n";
+    }
 }
 
 
 void BattleShip::StandardView::showPlayersBoard(const Player& player){
-    printBoard(player.getBoard());
+
 }
 
 void BattleShip::StandardView::showPlacementBoard(const Player &player) {
@@ -117,7 +115,7 @@ ShipPlacement BattleShip::StandardView::getShipPlacement(const Player &player, c
     if(input == 'v'){
 
 
-        out<<player.getName() << ",  enter the row and column you want to place" << shipChar << ", which is " <<shipLen<< " long, at with a space in between row and col:"<<endl;
+        out<<player.getName() << ",  enter the row and column you want to place" << shipChar << ", which is " <<shipLen<< " long, at with a space in between row and col:"<<std::endl;
         verifiedRead(in, row);
         verifiedRead(in, col);
 
@@ -128,7 +126,7 @@ ShipPlacement BattleShip::StandardView::getShipPlacement(const Player &player, c
     }else
     if( input == 'h'){
 
-        out<<player.getName() << ",  enter the row and column you want to place" << shipChar << ", which is " <<shipLen<< " long, at with a space in between row and col:"<<endl;
+        out<<player.getName() << ",  enter the row and column you want to place" << shipChar << ", which is " <<shipLen<< " long, at with a space in between row and col:"<<std::endl;
         verifiedRead(in, row);
         verifiedRead(in, col);
 
