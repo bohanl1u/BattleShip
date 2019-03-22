@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Attack.h
+Move.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Move.h
+Player.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Player.h
+
 /cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/AttackResult.h
 
 /cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Board.h
@@ -26,13 +32,23 @@ istream
 map
 -
 
-/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Model.cpp
-fstream
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/HumanPlayer.cpp
+utility
 -
-algorithm
--
-Model.h
-/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Model.h
+HumanPlayer.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/HumanPlayer.h
+ShipPlacement.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/ShipPlacement.h
+Attack.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Attack.h
+
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/HumanPlayer.h
+Player.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Player.h
+View.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/View.h
+GameAttributes.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/GameAttributes.h
 
 /cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Model.h
 vector
@@ -77,6 +93,38 @@ AttackResult.h
 /cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/PlayerConfiguration.h
 
 /cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/ShipPlacement.h
+
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/StandardView.cpp
+algorithm
+-
+vector
+-
+cctype
+-
+StandardView.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/StandardView.h
+Utility.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Utility.h
+
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/StandardView.h
+iostream
+-
+utility
+-
+PlayerConfiguration.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/PlayerConfiguration.h
+View.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/View.h
+
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Utility.h
+algorithm
+-
+iostream
+-
+stdexcept
+-
+random
+-
 
 /cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/View.h
 unordered_map

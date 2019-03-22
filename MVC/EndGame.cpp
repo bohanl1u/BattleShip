@@ -4,3 +4,14 @@
 
 #include "EndGame.h"
 
+BattleShip::EndGame::EndGame(BattleShip::Player &moveMaker) : Move(moveMaker) {
+
+}
+
+void BattleShip::EndGame::enact(BattleShip::Model &model, BattleShip::View &view) {
+
+}
+
+bool BattleShip::EndGame::isValid() const {
+    return true;
+}

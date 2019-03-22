@@ -76,7 +76,7 @@ void BattleShip::StandardView::printBoardAsVisible(const Board &board) {
 }
 
 void BattleShip::StandardView::printBoard(const std::vector<std::string> &board) {
-    for (int i = 0; i < board.size(); i++){
+    for (int i = 0; (unsigned)i < board.size(); i++){
         out<<board[i];
         out<<"\n";
     }
@@ -84,7 +84,7 @@ void BattleShip::StandardView::printBoard(const std::vector<std::string> &board)
 
 
 void BattleShip::StandardView::showPlayersBoard(const Player& player){
-
+    printBoardAsVisible(player.getBoard());
 }
 
 void BattleShip::StandardView::showPlacementBoard(const Player &player) {

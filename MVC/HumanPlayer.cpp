@@ -17,9 +17,11 @@ std::unique_ptr<BattleShip::Move> BattleShip::HumanPlayer::getMove() {
 }
 
 void BattleShip::HumanPlayer::placeShips() {
-    for (int i=0; i<shipHealths.size(); i++){
-        char shipChar = shipHealths.;
-        getBoard().AddShip(view.getShipPlacement(this, shipHealths));
+    for (auto const& x: shipHealths){
+        char shipChar = x.first;
+        int shipLen = x.second;
+        board.AddShip(shipChar, view.getShipPlacement(*this, shipChar, shipLen));
+        view.updateShipPlacementView(*this);
     }
 }
 
