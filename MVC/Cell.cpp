@@ -18,7 +18,7 @@ char BattleShip::Cell::getContents() const {
 }
 
 void BattleShip::Cell::setContents(char contents) {
-    BattleShip::Cell::contents = contents;
+    this->contents = contents;
 }
 
 char BattleShip::Cell::getContentsIfHidden() const {
@@ -60,15 +60,15 @@ char BattleShip::Cell::getContentsIfVisible() const {
 }
 
 bool BattleShip::Cell::HasBeenFiredAt() const {
-    return BattleShip::Cell::firedAt;
+    return this->firedAt;
 }
 
 void BattleShip::Cell::setHasBeenFiredAt(bool hasBeenFiredAt){
-    BattleShip::Cell::firedAt = hasBeenFiredAt;
+    this->firedAt = hasBeenFiredAt;
 }
 
 bool BattleShip::Cell::containsShip() const {
-    if ((BattleShip::Cell::contents != BattleShip::Cell::hiddenMarker)) {
+    if ((contents != hiddenMarker)) {
         return true;
     }
     else {

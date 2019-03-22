@@ -62,6 +62,13 @@ std::string BattleShip::StandardView::getPlayerName(int i) {
     return name;
 }
 
+void BattleShip::StandardView::printBoard(const std::vector<std::string> &board) {
+    for (int i = 0; (unsigned)i < board.size(); i++){
+        out<<board[i];
+        out<<"\n";
+    }
+}
+
 
 void BattleShip::StandardView::printBoardAsObscured(const Board &board) {
     std::vector<std::string> hidBoard = board.getHiddenVersion();
@@ -74,14 +81,6 @@ void BattleShip::StandardView::printBoardAsVisible(const Board &board) {
     printBoard(visBoard);
 
 }
-
-void BattleShip::StandardView::printBoard(const std::vector<std::string> &board) {
-    for (int i = 0; (unsigned)i < board.size(); i++){
-        out<<board[i];
-        out<<"\n";
-    }
-}
-
 
 void BattleShip::StandardView::showPlayersBoard(const Player& player){
     out<<player.getName()<<"'s Firing Board"<<std::endl;
@@ -108,7 +107,7 @@ ShipPlacement BattleShip::StandardView::getShipPlacement(const Player &player, c
 
 
 
-    out<<player.getName()<< ",  do you want to place "<<shipChar<<" horizontally or vertically?\n"
+    out<<player.getName()<< ", do you want to place "<<shipChar<<" horizontally or vertically?\n"
                                                                   "Enter h for horizontal or v for vertical\n"
                                                                   "Your choice: "<<std::endl;
 
@@ -117,7 +116,7 @@ ShipPlacement BattleShip::StandardView::getShipPlacement(const Player &player, c
     if(input == 'v'){
 
 
-        out<<player.getName() << ",  enter the row and column you want to place" << shipChar << ", which is " <<shipLen<< " long, at with a space in between row and col:"<<std::endl;
+        out<<player.getName() << ", enter the row and column you want to place" << shipChar << ", which is " <<shipLen<< " long, at with a space in between row and col:"<<std::endl;
         verifiedRead(in, row);
         verifiedRead(in, col);
 
