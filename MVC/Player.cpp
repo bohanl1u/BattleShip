@@ -9,6 +9,7 @@ int BattleShip::Player::num_instances = 0;
 BattleShip::Player::Player(const BattleShip::GameAttributes &gameAttributes, BattleShip::View &view): id(BattleShip::Player::num_instances),
         view(view), board(BattleShip::Board(gameAttributes.getNumRows(), gameAttributes.getNumCols())) {
     BattleShip::Player::num_instances++;
+    shipHealths = gameAttributes.getShipAttributes();
 }
 
 const std::string &BattleShip::Player::getName() const {

@@ -13,6 +13,7 @@
 #include "CheatingAI.h"
 #include "RandomAI.h"
 #include "HuntDestroyAI.h"
+
 BattleShip::Controller::Controller(): hasBeenSetUp(false), model(BattleShip::Model()) {
     BattleShip::StandardView stdview;
     this->view = std::make_unique<StandardView>(stdview);
@@ -36,13 +37,13 @@ void BattleShip::Controller::setupGame(const std::string &GameConfigurationFile,
     for (int j=0; j<playerConfig.numAiPlayers; j++){
         int numAI = (*view).getAiChoice();
         if (numAI == 1){
-            model.addPlayer<CheatingAI>(*view);
+            model.addPlayer<RandomAI>(*view);
         }
         else if (numAI == 2){
             model.addPlayer<RandomAI>(*view);
         }
         else if (numAI == 3){
-            model.addPlayer<HuntDestroyAI>(*view);
+            model.addPlayer<RandomAI>(*view);
         }
     }
     hasBeenSetUp = true;
@@ -58,6 +59,7 @@ void BattleShip::Controller::setupGame() {
 void BattleShip::Controller::playGame() {
 //in PlayGame: you can get the move from the current player,
 // enact the move then change the turn until the game is over!
+    model.SetOpponents();
     while (!model.isGameOver()){
         model.getNextMove()->enact(model, *view);
         model.changeTurn();

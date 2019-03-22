@@ -5,6 +5,7 @@
 #include <fstream>
 #include <algorithm>
 #include "Model.h"
+#include "stdio.h"
 
 BattleShip::Model::Model(): gameAttributes(BattleShip::GameAttributes()),
     players(std::vector<std::unique_ptr<Player>>()), playerTurn(0), forcedGameOver(false) {
@@ -36,8 +37,10 @@ void BattleShip::Model::changeTurn() {
 }
 
 void BattleShip::Model::loadGameConfigurationFromFile(const std::string &gameConfigurationFile) {
-    std::ifstream f(gameConfigurationFile);
+    std::ifstream f;
+    f.open(gameConfigurationFile, std::ios::in);
     f>>gameAttributes;
+
 }
 
 void BattleShip::Model::endGame() {

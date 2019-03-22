@@ -5,3 +5,9 @@
 #include "CheatingAI.h"
 #include "Attack.h"
 
+BattleShip::CheatingAI::CheatingAI(const BattleShip::GameAttributes &gameAttributes, BattleShip::View &view) : AiPlayer(
+        gameAttributes, view) {
+
+}
+
+

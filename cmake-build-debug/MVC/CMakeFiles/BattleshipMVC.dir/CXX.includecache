@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/AiPlayer.h
+random
+-
+Player.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Player.h
+View.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/View.h
+GameAttributes.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/GameAttributes.h
+
 /cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Attack.h
 Move.h
 /cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Move.h
@@ -32,23 +42,23 @@ istream
 map
 -
 
-/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/HumanPlayer.cpp
-utility
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/HuntDestroyAI.cpp
+algorithm
 -
-HumanPlayer.h
-/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/HumanPlayer.h
-ShipPlacement.h
-/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/ShipPlacement.h
+HuntDestroyAI.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/HuntDestroyAI.h
 Attack.h
 /cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Attack.h
+Utility.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Utility.h
 
-/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/HumanPlayer.h
-Player.h
-/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Player.h
-View.h
-/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/View.h
-GameAttributes.h
-/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/GameAttributes.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/HuntDestroyAI.h
+vector
+-
+algorithm
+-
+RandomAI.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/RandomAI.h
 
 /cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Model.h
 vector
@@ -92,29 +102,15 @@ AttackResult.h
 
 /cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/PlayerConfiguration.h
 
-/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/ShipPlacement.h
-
-/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/StandardView.cpp
-algorithm
--
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/RandomAI.h
 vector
 -
-cctype
+algorithm
 -
-StandardView.h
-/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/StandardView.h
-Utility.h
-/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Utility.h
+AiPlayer.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/AiPlayer.h
 
-/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/StandardView.h
-iostream
--
-utility
--
-PlayerConfiguration.h
-/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/PlayerConfiguration.h
-View.h
-/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/View.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/ShipPlacement.h
 
 /cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Utility.h
 algorithm

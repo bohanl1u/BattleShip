@@ -56,7 +56,7 @@ int BattleShip::StandardView::getAiChoice(){
 
 
 std::string BattleShip::StandardView::getPlayerName(int i) {
-    std::cout<<"Player 1 please enter your name:"<<std::endl;
+    std::cout<<"Player "<<i<<" please enter your name:"<<std::endl;
     std::string name;
     verifiedRead(in, name);
     return name;
@@ -84,10 +84,12 @@ void BattleShip::StandardView::printBoard(const std::vector<std::string> &board)
 
 
 void BattleShip::StandardView::showPlayersBoard(const Player& player){
+    out<<player.getName()<<"'s Firing Board"<<std::endl;
     printBoardAsVisible(player.getBoard());
 }
 
 void BattleShip::StandardView::showPlacementBoard(const Player &player) {
+    out<<player.getName()<<"'s Placement Board"<<std::endl;
     printBoardAsVisible(player.getBoard());
 }
 
@@ -141,6 +143,42 @@ ShipPlacement BattleShip::StandardView::getShipPlacement(const Player &player, c
     return  place;
 
 }
+
+
+std::pair<int, int> BattleShip::StandardView::getFiringCoordinate(const BattleShip::Player &attacker) {
+    int row;
+    int col;
+
+    out<<attacker.getName()<<", where would you like to fire?\nEnter your attack coordinate in the form row col:"<<std::endl;
+
+    verifiedRead(in, row);
+    verifiedRead(in, col);
+
+    std::pair<int, int> coord;
+
+    coord = std::make_pair(row, col);
+
+    return coord;
+}
+
+
+void BattleShip::StandardView::showWinner(const Player &winner) {
+    out<<winner.getName()<<" won the game!"<<std::endl;
+}
+
+void BattleShip::StandardView::showResultOfAttack(const BattleShip::Player &attacker,
+                                                  const BattleShip::AttackResult &attackResult) {
+    if(attackResult.hit){
+        out<<attacker.getName()<<" hit "<<attacker.getOpponent().getName()<<"'s"<<attackResult.shipChar<<"!"<<std::endl;
+    }else if(attackResult.destroyed){
+        out<<attacker.getName()<<" destroyed "<<attacker.getOpponent().getName()<<"'s"<<attackResult.shipChar<<"!"<<std::endl;
+    }
+    else{
+        out<<"Missed."<<std::endl;
+    }
+}
+
+
 
 
 

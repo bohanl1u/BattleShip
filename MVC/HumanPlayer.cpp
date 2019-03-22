@@ -6,6 +6,7 @@
 #include "HumanPlayer.h"
 #include "ShipPlacement.h"
 #include "Attack.h"
+#include "stdio.h"
 
 BattleShip::HumanPlayer::HumanPlayer(const BattleShip::GameAttributes &gameAttributes, BattleShip::View &view) : Player(
         gameAttributes, view) {
@@ -17,7 +18,7 @@ std::unique_ptr<BattleShip::Move> BattleShip::HumanPlayer::getMove() {
 }
 
 void BattleShip::HumanPlayer::placeShips() {
-    for (auto const& x: shipHealths){
+    for (auto const&x : shipHealths){
         char shipChar = x.first;
         int shipLen = x.second;
         board.AddShip(shipChar, view.getShipPlacement(*this, shipChar, shipLen));
