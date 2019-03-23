@@ -46,6 +46,7 @@ void BattleShip::Controller::setupGame(const std::string &GameConfigurationFile,
             model.addPlayer<RandomAI>(*view);
         }
     }
+    model.SetOpponents();
     hasBeenSetUp = true;
 }
 
@@ -59,7 +60,7 @@ void BattleShip::Controller::setupGame() {
 void BattleShip::Controller::playGame() {
 //in PlayGame: you can get the move from the current player,
 // enact the move then change the turn until the game is over!
-    model.SetOpponents();
+
     while (!model.isGameOver()){
         model.getNextMove()->enact(model, *view);
         model.changeTurn();

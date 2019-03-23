@@ -7,14 +7,16 @@
 
 BattleShip::Cell::Cell(char contents, const char hiddenMarker, const char hitMarker, const char missMarker): hiddenMarker(hiddenMarker), hitMarker(hitMarker), missMarker(missMarker){
     BattleShip::Cell::contents = contents;
+    firedAt = false;
 }
 
 BattleShip::Cell::Cell(char contents): hiddenMarker('*'), hitMarker('X'), missMarker('O'){
     BattleShip::Cell::contents = contents;
+    firedAt = false;
 }
 
 char BattleShip::Cell::getContents() const {
-    return contents;
+    return this->contents;
 }
 
 void BattleShip::Cell::setContents(char contents) {

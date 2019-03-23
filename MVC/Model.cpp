@@ -38,8 +38,9 @@ void BattleShip::Model::changeTurn() {
 
 void BattleShip::Model::loadGameConfigurationFromFile(const std::string &gameConfigurationFile) {
     std::ifstream f;
-    f.open(gameConfigurationFile, std::ios::in);
+    f.open(gameConfigurationFile);
     f>>gameAttributes;
+    printf("%d", gameAttributes.getNumRows());
 
 }
 

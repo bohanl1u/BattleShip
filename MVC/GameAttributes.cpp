@@ -24,7 +24,7 @@ BattleShip::GameAttributes::GameAttributes(std::istream &in) {
 
         char shipChar;
         int shipSize;
-        for (int i=0; i<numShips; i++){
+        for (int i=0; i<numShips; i++) {
             verifiedRead(in, shipChar);
             verifiedRead(in, shipSize);
             shipAttributes.insert(std::make_pair(shipChar, shipSize));
