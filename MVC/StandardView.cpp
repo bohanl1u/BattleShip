@@ -101,11 +101,12 @@ void BattleShip::StandardView::showPlayersBoard(const Player& player){
 }
 
 void BattleShip::StandardView::showPlacementBoard(const Player &player) {
+    out<<player.getName()<<"'s Placement Board"<<std::endl;
     printBoardAsVisible(player.getBoard());
 }
 
 void BattleShip::StandardView::updateShipPlacementView(const Player &player) {
-    showPlacementBoard(player);
+    printBoardAsVisible(player.getBoard());
 }
 
 
@@ -139,7 +140,7 @@ ShipPlacement BattleShip::StandardView::getShipPlacement(const Player &player, c
     }else
     if( input == 'h'){
 
-        out<<player.getName() << ", enter the row and column you want to place" << shipChar << ", which is " <<shipLen<< " long, at with a space in between row and col:"<<std::endl;
+        out<<player.getName() << ", enter the row and column you want to place " << shipChar << ", which is " <<shipLen<< " long, at with a space in between row and col:"<<std::endl;
         verifiedRead(in, row);
         verifiedRead(in, col);
 
@@ -182,6 +183,7 @@ void BattleShip::StandardView::showResultOfAttack(const BattleShip::Player &atta
     if(attackResult.hit&&!attackResult.destroyed){
         out<<attacker.getName()<<" hit "<<attacker.getOpponent().getName()<<"'s "<<attackResult.shipChar<<"!"<<std::endl;
     }else if(attackResult.hit&&attackResult.destroyed){
+        out<<attacker.getName()<<" hit "<<attacker.getOpponent().getName()<<"'s "<<attackResult.shipChar<<"!"<<std::endl;
         out<<attacker.getName()<<" destroyed "<<attacker.getOpponent().getName()<<"'s "<<attackResult.shipChar<<"!"<<std::endl;
     }
     else{

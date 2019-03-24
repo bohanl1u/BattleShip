@@ -28,5 +28,5 @@ void BattleShip::HumanPlayer::placeShips() {
 
 void BattleShip::HumanPlayer::initializeName() {
     setName(view.getPlayerName(getId()+1));
-    view.showPlacementBoard(*this);
+    view.updateShipPlacementView(*this);
 }

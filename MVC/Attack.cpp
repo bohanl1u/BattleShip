@@ -3,19 +3,16 @@
 //
 
 #include "Attack.h"
-#include <iostream>
 
 
 BattleShip::Attack::Attack(BattleShip::Player &attacker, int row, int col): BattleShip::Move(attacker), row(row), col(col) {
 }
 
 void BattleShip::Attack::enact(BattleShip::Model &model, BattleShip::View &view) {
-    view.showPlayersBoard(moveMaker);
-    std::cout<<moveMaker.getName()<<"'s Placement Board"<<std::endl;
-    view.showPlacementBoard(moveMaker);
     BattleShip::AttackResult result = moveMaker.fireAt(getRow(), getCol());
+    view.showPlayersBoard(moveMaker);
+    view.showPlacementBoard(moveMaker);
     view.showResultOfAttack(moveMaker, result);
-
 }
 
 bool BattleShip::Attack::isValid() const {
