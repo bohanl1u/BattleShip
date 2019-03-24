@@ -21,8 +21,7 @@ BattleShip::Board::Board(int numRows, int numCols): boardState(std::vector<std::
     for(int i=0; i<numRows; i++){
         std::vector<Cell> curRow;
         for(int j=0; j < numCols; j++){
-            BattleShip::Cell cell(blankChar);
-            curRow.push_back(cell);
+            curRow.push_back(blankChar);
         }
         boardState.push_back(curRow);
     }
@@ -83,7 +82,7 @@ void BattleShip::Board::AddShip(char shipChar, const ShipPlacement &shipPlacemen
         }else
         if(shipPlacement.colStart != shipPlacement.colEnd){
             for (int i=shipPlacement.rowStart; i<=shipPlacement.rowEnd; i++){
-                for (int j=shipPlacement.colStart; j<=shipPlacement.colEnd; j++){
+                for (int j=shipPlacement.colStart; j<shipPlacement.colEnd; j++){
                     at(i, j).setContents(shipChar);
                 }
             }

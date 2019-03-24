@@ -6,11 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Cell.cpp
-stdexcept
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Board.cpp
+Board.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Board.h
+
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Board.h
+string
 -
+vector
+-
+ShipPlacement.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/ShipPlacement.h
 Cell.h
 /cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Cell.h
 
 /cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Cell.h
+
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/ShipPlacement.h
 
