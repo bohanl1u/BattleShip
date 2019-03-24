@@ -28,7 +28,10 @@ void BattleShip::Controller::setupGame(const std::string &GameConfigurationFile,
 // ( you can see in the add player function, it calls placeShips for each player..
 // so this is part of the setup, and set the opponents for all the players
     AiPlayer::seed_random_number_generator(seed);
+    setupGame(GameConfigurationFile);
+}
 
+void BattleShip::Controller::setupGame(const std::string &GameConfigurationFile) {
     model.loadGameConfigurationFromFile(GameConfigurationFile);
     PlayerConfiguration playerConfig = (*view).getPlayerConfiguration();
     for (int i=0; i<playerConfig.numHumanPlayers; i++){
@@ -48,10 +51,7 @@ void BattleShip::Controller::setupGame(const std::string &GameConfigurationFile,
     }
     model.SetOpponents();
     hasBeenSetUp = true;
-}
 
-void BattleShip::Controller::setupGame(const std::string &GameConfigurationFile) {
-    setupGame(GameConfigurationFile, 1);
 }
 
 void BattleShip::Controller::setupGame() {
@@ -65,5 +65,5 @@ void BattleShip::Controller::playGame() {
         model.getNextMove()->enact(model, *view);
         model.changeTurn();
     }
-
+    view->showWinner(model.getWinner());
 }

@@ -51,7 +51,7 @@ std::unique_ptr<BattleShip::Move> BattleShip::Model::getNextMove() {
 }
 
 BattleShip::Player &BattleShip::Model::getWinner() {
-    return getAttackingPlayer();
+    return getDefendingPlayer();
 }
 
 void BattleShip::Model::SetOpponents() {

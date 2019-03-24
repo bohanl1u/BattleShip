@@ -145,7 +145,7 @@ ShipPlacement BattleShip::StandardView::getShipPlacement(const Player &player, c
         verifiedRead(in, col);
 
 
-        endCol = row-1+shipLen;
+        endCol = col-1+shipLen;
         endRow = row;
 
     }

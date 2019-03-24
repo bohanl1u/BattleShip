@@ -26,16 +26,6 @@ istream
 map
 -
 
-/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Model.cpp
-fstream
--
-algorithm
--
-Model.h
-/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Model.h
-stdio.h
-/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/stdio.h
-
 /cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Model.h
 vector
 -
@@ -79,6 +69,40 @@ AttackResult.h
 /cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/PlayerConfiguration.h
 
 /cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/ShipPlacement.h
+
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/StandardView.cpp
+algorithm
+-
+vector
+-
+cctype
+-
+StandardView.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/StandardView.h
+Utility.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Utility.h
+stdio.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/stdio.h
+
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/StandardView.h
+iostream
+-
+utility
+-
+PlayerConfiguration.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/PlayerConfiguration.h
+View.h
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/View.h
+
+/cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/Utility.h
+algorithm
+-
+iostream
+-
+stdexcept
+-
+random
+-
 
 /cygdrive/c/Users/Jimmy/Documents/CLion/BattleShip/MVC/View.h
 unordered_map
