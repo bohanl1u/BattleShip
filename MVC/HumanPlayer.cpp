@@ -13,6 +13,8 @@ BattleShip::HumanPlayer::HumanPlayer(const BattleShip::GameAttributes &gameAttri
 }
 
 std::unique_ptr<BattleShip::Move> BattleShip::HumanPlayer::getMove() {
+    view.showPlayersBoard(*this);
+    view.showPlacementBoard(*this);
     std::pair<int, int> pair = view.getFiringCoordinate(*this);
     return std::make_unique<BattleShip::Attack>(*this, pair.first, pair.second);
 }
