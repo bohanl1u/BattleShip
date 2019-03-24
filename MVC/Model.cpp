@@ -28,7 +28,7 @@ const BattleShip::Player &BattleShip::Model::getDefendingPlayer() const {
 }
 
 bool BattleShip::Model::isGameOver() const {
-    bool isGameOver = players[playerTurn]->allShipsSunk()&&players[(playerTurn+1)%2]->allShipsSunk();
+    bool isGameOver = players[playerTurn]->allShipsSunk()||players[(playerTurn+1)%2]->allShipsSunk();
     return isGameOver;
 }
 

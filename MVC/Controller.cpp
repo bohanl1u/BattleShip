@@ -65,4 +65,5 @@ void BattleShip::Controller::playGame() {
         model.getNextMove()->enact(model, *view);
         model.changeTurn();
     }
+
 }
