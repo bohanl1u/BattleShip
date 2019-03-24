@@ -43,7 +43,7 @@ void BattleShip::Controller::setupGame(const std::string &GameConfigurationFile,
             model.addPlayer<RandomAI>(*view);
         }
         else if (numAI == 3){
-            model.addPlayer<RandomAI>(*view);
+            model.addPlayer<HuntDestroyAI>(*view);
         }
     }
     model.SetOpponents();

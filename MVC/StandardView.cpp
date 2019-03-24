@@ -97,11 +97,11 @@ void BattleShip::StandardView::printBoardAsVisible(const Board &board) {
 
 void BattleShip::StandardView::showPlayersBoard(const Player& player){
     out<<player.getName()<<"'s Firing Board"<<std::endl;
-    printBoardAsVisible(player.getBoard());
+    printBoardAsObscured(player.getOpponent().getBoard());
 }
 
 void BattleShip::StandardView::showPlacementBoard(const Player &player) {
-    //out<<player.getName()<<"'s Placement Board"<<std::endl;
+    out<<player.getName()<<"'s Placement Board"<<std::endl;
     printBoardAsVisible(player.getBoard());
 }
 
@@ -182,12 +182,14 @@ void BattleShip::StandardView::showResultOfAttack(const BattleShip::Player &atta
                                                   const BattleShip::AttackResult &attackResult) {
     if(attackResult.hit&&!attackResult.destroyed){
         out<<attacker.getName()<<" hit "<<attacker.getOpponent().getName()<<"'s "<<attackResult.shipChar<<"!"<<std::endl;
-    }else if(attackResult.destroyed){
+    }else if(attackResult.hit&&attackResult.destroyed){
         out<<attacker.getName()<<" destroyed "<<attacker.getOpponent().getName()<<"'s "<<attackResult.shipChar<<"!"<<std::endl;
     }
     else{
         out<<"Missed."<<std::endl;
     }
+
+
 }
 
 

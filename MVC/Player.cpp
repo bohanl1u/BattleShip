@@ -46,6 +46,7 @@ bool BattleShip::Player::allShipsSunk() const {
 
 BattleShip::AttackResult BattleShip::Player::fireAt(int row, int col) {
     char charAt = getOpponent().getBoard().at(row, col).getContents();
+    getOpponent().getBoard().at(row, col).setHasBeenFiredAt(true);
     bool destroyed;
     bool h = this->hit(charAt);
     if (h){
