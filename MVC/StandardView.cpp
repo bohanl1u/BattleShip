@@ -59,7 +59,7 @@ int BattleShip::StandardView::getAiChoice(){
 std::string BattleShip::StandardView::getPlayerName(int i) {
     std::cout<<"Player "<<i<<" please enter your name:"<<std::endl;
     std::string name;
-    verifiedRead(in, name);
+    in >> name;
     return name;
 }
 
@@ -101,7 +101,6 @@ void BattleShip::StandardView::showPlayersBoard(const Player& player){
 }
 
 void BattleShip::StandardView::showPlacementBoard(const Player &player) {
-    out<<player.getName()<<"'s Placement Board"<<std::endl;
     printBoardAsVisible(player.getBoard());
 }
 
@@ -140,7 +139,7 @@ ShipPlacement BattleShip::StandardView::getShipPlacement(const Player &player, c
     }else
     if( input == 'h'){
 
-        out<<player.getName() << ",  enter the row and column you want to place" << shipChar << ", which is " <<shipLen<< " long, at with a space in between row and col:"<<std::endl;
+        out<<player.getName() << ", enter the row and column you want to place" << shipChar << ", which is " <<shipLen<< " long, at with a space in between row and col:"<<std::endl;
         verifiedRead(in, row);
         verifiedRead(in, col);
 
@@ -161,7 +160,7 @@ std::pair<int, int> BattleShip::StandardView::getFiringCoordinate(const BattleSh
     int row;
     int col;
 
-    out<<attacker.getName()<<", where would you like to fire?\nEnter your attack coordinate in the form row col:"<<std::endl;
+    out<<attacker.getName()<<", where would you like to fire?\nEnter your attack coordinate in the form row col:";
 
     verifiedRead(in, row);
     verifiedRead(in, col);
