@@ -40,8 +40,6 @@ void BattleShip::Model::loadGameConfigurationFromFile(const std::string &gameCon
     std::ifstream f;
     f.open(gameConfigurationFile);
     f>>gameAttributes;
-    printf("%d", gameAttributes.getNumRows());
-
 }
 
 void BattleShip::Model::endGame() {

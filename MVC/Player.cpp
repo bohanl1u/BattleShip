@@ -47,17 +47,21 @@ bool BattleShip::Player::allShipsSunk() const {
 BattleShip::AttackResult BattleShip::Player::fireAt(int row, int col) {
     char charAt = getOpponent().getBoard().at(row, col).getContents();
     bool destroyed;
-    bool hit = this->hit(charAt);
-    if (hit){
+    bool h = this->hit(charAt);
+    if (h){
         shipHealths.at(charAt)--;
+        if(shipHealths.at(charAt)==0){
+            destroyed = true;
+            shipHealths.erase(charAt);
+        }
+        else{
+            destroyed = false;
+        }
     }
-    if(shipHealths.at(charAt)==0){
-        destroyed = true;
-        shipHealths.erase(charAt);
-    }else{
+    else{
         destroyed = false;
     }
-    return BattleShip::AttackResult(hit, destroyed, charAt);
+    return AttackResult(h, destroyed, charAt);
 }
 
 BattleShip::Player &BattleShip::Player::getOpponent() {

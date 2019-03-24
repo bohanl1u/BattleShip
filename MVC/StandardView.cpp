@@ -133,7 +133,7 @@ ShipPlacement BattleShip::StandardView::getShipPlacement(const Player &player, c
         verifiedRead(in, row);
         verifiedRead(in, col);
 
-        endRow = row+shipLen;
+        endRow = row-1+shipLen;
         endCol = col;
 
 
@@ -145,7 +145,7 @@ ShipPlacement BattleShip::StandardView::getShipPlacement(const Player &player, c
         verifiedRead(in, col);
 
 
-        endCol = row+shipLen;
+        endCol = row-1+shipLen;
         endRow = row;
 
     }
@@ -180,10 +180,10 @@ void BattleShip::StandardView::showWinner(const Player &winner) {
 
 void BattleShip::StandardView::showResultOfAttack(const BattleShip::Player &attacker,
                                                   const BattleShip::AttackResult &attackResult) {
-    if(attackResult.hit){
-        out<<attacker.getName()<<" hit "<<attacker.getOpponent().getName()<<"'s"<<attackResult.shipChar<<"!"<<std::endl;
+    if(attackResult.hit&&!attackResult.destroyed){
+        out<<attacker.getName()<<" hit "<<attacker.getOpponent().getName()<<"'s "<<attackResult.shipChar<<"!"<<std::endl;
     }else if(attackResult.destroyed){
-        out<<attacker.getName()<<" destroyed "<<attacker.getOpponent().getName()<<"'s"<<attackResult.shipChar<<"!"<<std::endl;
+        out<<attacker.getName()<<" destroyed "<<attacker.getOpponent().getName()<<"'s "<<attackResult.shipChar<<"!"<<std::endl;
     }
     else{
         out<<"Missed."<<std::endl;

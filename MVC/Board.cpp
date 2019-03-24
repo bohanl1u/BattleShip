@@ -74,7 +74,7 @@ std::vector<std::string> BattleShip::Board::getVisibleVersion() const {
 void BattleShip::Board::AddShip(char shipChar, const ShipPlacement &shipPlacement) {
     if (canPlaceShipAt(shipPlacement)){
         if(shipPlacement.rowStart != shipPlacement.rowEnd){
-            for (int i=shipPlacement.rowStart; i<shipPlacement.rowEnd; i++){
+            for (int i=shipPlacement.rowStart; i<=shipPlacement.rowEnd; i++){
                 for (int j=shipPlacement.colStart; j<=shipPlacement.colEnd; j++){
                     at(i, j).setContents(shipChar);
                 }
@@ -82,7 +82,7 @@ void BattleShip::Board::AddShip(char shipChar, const ShipPlacement &shipPlacemen
         }else
         if(shipPlacement.colStart != shipPlacement.colEnd){
             for (int i=shipPlacement.rowStart; i<=shipPlacement.rowEnd; i++){
-                for (int j=shipPlacement.colStart; j<shipPlacement.colEnd; j++){
+                for (int j=shipPlacement.colStart; j<=shipPlacement.colEnd; j++){
                     at(i, j).setContents(shipChar);
                 }
             }
